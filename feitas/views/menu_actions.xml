@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <menuitem name="学院" id="menu_feitas_academy_root" />
+        <menuitem name="教务管理" id="menu_fa_jiaowu" parent="menu_feitas_academy_root"  sequence="5"/>
+
+        <record model="ir.actions.act_window" id="action_fa_jiaowu_course">
+            <field name="name">课程</field>
+            <field name="res_model">feitas.course</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="课程" id="menu_fa_jiaowu_course" parent="menu_fa_jiaowu"
+                  action="action_fa_jiaowu_course"
+                  sequence="6" />
+
+    </data>
+</odoo>

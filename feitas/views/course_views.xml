@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <record id="view_fa_course_list" model="ir.ui.view">
+            <field name="name">view.fa.course.list</field>
+            <field name="model">feitas.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="total_hours" />
+                    <field name="manager_id" />
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_fa_course_form" model="ir.ui.view">
+            <field name="name">view.fa.course.form</field>
+            <field name="model">feitas.course</field>
+            <field name="arch" type="xml">
+                <form string="课程">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="type" />
+                                <field name="manager_id" />
+                            </group>
+                            <group>
+                                <field name="total_hours" />
+                                <field name="lesson_hours" />
+                                <field name="exercise_hours" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="描述">
+                                <group>
+                                    <field name="description" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

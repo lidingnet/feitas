@@ -1,14 +1,16 @@
->目录结构
-
+目录结构
+==========
 #### models目录
 
 * 存放所有的模型文件
 * 新模型前缀为feitas. 例如：课程模型——feitas.course  文件名为 courses.py
+    * feitas_course.py 课程模型
 * 扩展模型的文件命名用原来官方的命名。
 
 #### views目录
 
 * 存放所有的视图文件，命名格式***_views.xml，其中***为与模型文件名相同
+    * course_views.xml  课程视图
 * menu_actions.xml 专门用来存放菜单和动作的定义
 * multi_actions.xml 专门用来存放multi动作
 * templates.xml 专门用来存放模板

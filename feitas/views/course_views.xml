@@ -8,8 +8,10 @@
                 <tree>
                     <field name="name" />
                     <field name="type" />
-                    <field name="total_hours" />
                     <field name="manager_id" />
+                    <field name="lesson_hours" />
+                    <field name="exercise_hours" />
+                    <field name="total_hours" />
                     <field name="description" />
                 </tree>
             </field>

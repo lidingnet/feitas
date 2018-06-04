@@ -16,6 +16,7 @@ class feitas_course(models.Model):
     total_hours= fields.Float(string= '总课时', required= True, compute='_compute_total_hours')
     lesson_hours= fields.Float(string= '理论课时', required= True)
     exercise_hours= fields.Float(string= '实操课时', required= True, help='实操课时只允许填写3或者4的倍数')
+    state= fields.Selection( [('0','草稿'), ('1','审核中'), ('2','审批中'), ('3','退回'),('4','已批')] , string= '状态', default= '0')
 
     @api.multi
     @api.depends('lesson_hours','exercise_hours')
@@ -78,3 +79,20 @@ class feitas_course(models.Model):
         self._check_course_hourse(vals)
         # 执行创建
         return super(feitas_course, self).create(vals)
+
+    # 提交按钮调用该方法，课程单据状态由草稿改为审核中
+    def btn_submit(self):
+        self.state= '1'
+
+    # 审核按钮调用该方法，课程单据状态由审核中改为审批中
+    def btn_approve_one(self):
+        self.state= '2'
+
+    # 审批按钮调用该方法，课程单据状态由审批中改为已通过。
+    def btn_approve_second(self):
+        self.state = '4'
+
+    # 审核或审批过程中，点击打回按钮调用该方法，课程单据状态由审核中 / 审批中改为被打回。
+    def btn_approve_refuse(self):
+        self.state = '3'
+

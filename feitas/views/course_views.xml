@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name" />
-                    <field name="type" /> 
+                    <field name="type" />
                     <field name="manager_id" />
                     <field name="lesson_hours" />
                     <field name="exercise_hours" />
@@ -21,7 +21,14 @@
             <field name="name">view.fa.course.form</field>
             <field name="model">feitas.course</field>
             <field name="arch" type="xml">
-                <form string="课程">
+                <form string="课程" class="">
+                    <header>
+                        <button name="btn_submit" string="提交审批" type="object" states="0,3" class="btn-primary" groups="feitas.group_feitas_teacher"/>
+                        <button name="btn_approve_one" string="审核通过" type="object" states="1" class="btn-primary" groups="feitas.group_feitas_leader"/>
+                        <button name="btn_approve_second" string="审批通过" type="object" states="2" class="btn-primary" groups="feitas.group_feitas_deam"/>
+                        <button name="btn_approve_refuse" string="退回" type="object" states="1,2,4" class="btn-primary" groups="feitas.group_feitas_leader,feitas.group_feitas_deam"/>
+                        <field name="state" widget="statusbar" statusbar_visible="0,1,2,3,4"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="name" />

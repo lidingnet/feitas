@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <record model="ir.module.category" id="module_feitas_category">
+        <field name="name">飞塔斯feitas</field>
+        <field name="description">feitas groups</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="group_feitas_teacher" model="res.groups">
+        <field name="name">教研员</field>
+        <field name="category_id" ref="module_feitas_category" />
+    </record>
+    <record id="group_feitas_leader" model="res.groups">
+        <field name="name">教研室主任</field>
+        <field name="category_id" ref="module_feitas_category" />
+        <field name="implied_ids" eval="[(4, ref('group_feitas_teacher'))]" />
+    </record>
+    <record id="group_feitas_deam" model="res.groups">
+        <field name="name">院长</field>
+        <field name="category_id" ref="module_feitas_category" />
+        <field name="implied_ids" eval="[(4, ref('group_feitas_leader'))]" />
+    </record>
+</data>
+
+<data noupdate="0">
+
+    <record model="ir.rule" id="feitas_all_course">
+      <field name="name">所有课程</field>
+      <field name="model_id" ref="model_feitas_course"/>
+      <field name="domain_force">[(1,'=',1)]</field>
+    </record>
+</data>
+
+</odoo>

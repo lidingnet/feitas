@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+feitas_course_001,Deny all,model_feitas_course,,0,0,0,0
+feitas_course_002,教员,model_feitas_course,group_feitas_teacher,1,1,1,1
+feitas_course_003,主任,model_feitas_course,group_feitas_leader,1,1,1,1
+feitas_course_004,院长,model_feitas_course,group_feitas_deam,1,1,1,1

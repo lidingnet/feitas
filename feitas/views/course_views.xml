@@ -17,6 +17,7 @@
             </field>
         </record>
 
+
         <record id="view_fa_course_form" model="ir.ui.view">
             <field name="name">view.fa.course.form</field>
             <field name="model">feitas.course</field>
@@ -30,6 +31,7 @@
                         <field name="state" widget="statusbar" statusbar_visible="0,1,2,3,4"/>
                     </header>
                     <sheet>
+
                         <group>
                             <field name="name" />
                         </group>
@@ -49,6 +51,22 @@
                                 <group>
                                     <field name="description" />
                                 </group>
+                            </page>
+                            <page string="开课记录">
+                                    <div name="button_box">
+                                            <button name="btn_open_course_log" string="查看开课记录" type="object" class="btn-primary" icon="fa-plus-square"/>
+                                    </div>
+                                    <field name="feitas_course_log_ids" >
+                                        <tree editable= '0'>
+                                            <field name="name" />
+                                            <field name="course_id"/>
+                                            <field name="start_date" />
+                                            <field name="seats" />
+                                        </tree>
+
+                                    </field>
+
+
                             </page>
                         </notebook>
                     </sheet>

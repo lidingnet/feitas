@@ -3,3 +3,4 @@ feitas_course_001,Deny all,model_feitas_course,,0,0,0,0
 feitas_course_002,教员,model_feitas_course,group_feitas_teacher,1,1,1,1
 feitas_course_003,主任,model_feitas_course,group_feitas_leader,1,1,1,1
 feitas_course_004,院长,model_feitas_course,group_feitas_deam,1,1,1,1
+feitas_course_005,院长,model_feitas_course_log,group_feitas_deam,1,1,1,1

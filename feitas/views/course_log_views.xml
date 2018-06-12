@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="view_fa_course_log_kanban" model="ir.ui.view">
+            <field name="name">view.fa.course.log.kanban</field>
+            <field name="model">feitas.course.log</field>
+            <field name="arch" type="xml">
+                <kanban >
+                    <field name="name" />
+                    <field name="course_id"/>
+                    <field name="start_date" />
+                    <field name="seats" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div>
+                                <p>编号：<field name="name" /></p>
+                                <p>课程：<field name="course_id"/></p>
+                                <p>开始时间：<field name="start_date" /></p>
+                                <p>座位数：<field name="seats" /></p>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_fa_course_log_form" model="ir.ui.view">
+            <field name="name">view.fa.course.log.form</field>
+            <field name="model">feitas.course.log</field>
+            <field name="arch" type="xml">
+                <form string="开课记录" class="">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="course_id" />
+                            </group>
+
+                            <group>
+                                <field name="start_date" string="开始时间" />
+                                <field name="seats" string="座位数"/>
+                            </group>
+
+                        </group>
+
+                        <group>
+                            <field name="partner_ids" string="学员"  widget="many2many_tags"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+
+</odoo>

@@ -4,3 +4,4 @@
 
 
 from . import feitas_course
+from . import feitas_course_log

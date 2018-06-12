@@ -17,6 +17,7 @@ class feitas_course(models.Model):
     lesson_hours= fields.Float(string= '理论课时', required= True)
     exercise_hours= fields.Float(string= '实操课时', required= True, help='实操课时只允许填写3或者4的倍数')
     state= fields.Selection( [('0','草稿'), ('1','审核中'), ('2','审批中'), ('3','退回'),('4','已批')] , string= '状态', default= '0')
+    feitas_course_log_ids= fields.One2many('feitas.course.log','course_id', 'Course Log')
 
     @api.multi
     @api.depends('lesson_hours','exercise_hours')

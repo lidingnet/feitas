@@ -19,7 +19,9 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/menu_actions.xml',
-        'views/course_views.xml'
+        'views/course_views.xml',
+        'views/course_log_views.xml',
+        'data/feitas_course_log_no.xml'
     ],
     'demo': [
     ],
